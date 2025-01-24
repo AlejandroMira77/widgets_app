@@ -66,6 +66,7 @@ class _ButtonsView extends StatelessWidget {
               label: const Text('TextButton icon'),
               icon: const Icon(Icons.wordpress),
             ),
+            const CustomButton(), // boton personalizado
             IconButton(onPressed: () {}, icon: const Icon(Icons.app_registration_rounded)),
             IconButton(
               onPressed: () {},
@@ -77,6 +78,31 @@ class _ButtonsView extends StatelessWidget {
             )
             // buttons -------
           ],
+        ),
+      ),
+    );
+  }
+}
+
+// ------ boton personalizado
+class CustomButton extends StatelessWidget {
+  const CustomButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+
+    final colors = Theme.of(context).colorScheme;
+
+    return ClipRRect( // sirve para crear bordes redondeados
+    borderRadius: BorderRadius.circular(20),
+      child: Material(
+        color: colors.primary,
+        child: InkWell(  // efectos como el boton al hacer tap
+          onTap: () {},
+          child: const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Text('Hola Mundo', style: TextStyle(color: Colors.white))
+          ),
         ),
       ),
     );
