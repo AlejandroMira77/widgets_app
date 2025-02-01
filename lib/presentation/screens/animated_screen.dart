@@ -29,9 +29,7 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
       random.nextInt(255), // blue
       1
     );
-    setState(() {
-      
-    });
+    setState(() {});
   }
 
   @override
